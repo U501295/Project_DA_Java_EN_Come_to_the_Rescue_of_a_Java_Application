@@ -1,8 +1,7 @@
 package com.hemebiotech.analytics;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * 
@@ -18,8 +17,8 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 * Used to list symptoms
 	 */
 	@Override
-	public Map<String, Integer> getSymptoms(List<String> symptoms) {
-		Map<String, Integer> symptomCount = new HashMap<String, Integer>();
+	public TreeMap<String, Integer> getSymptoms(List<String> symptoms) {
+		TreeMap<String, Integer> symptomCount = new TreeMap<String, Integer>();
 		final int startIterator = 1;
 
 		for (String symptom : symptoms) {

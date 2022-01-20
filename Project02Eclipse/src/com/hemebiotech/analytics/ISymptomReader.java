@@ -1,7 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
-import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * @author JULIEN BARONI, intern
@@ -24,5 +24,5 @@ public interface ISymptomReader {
 	 * @return A raw listing of all Symptoms obtained from a data source, duplicates
 	 *         are possible/probable.If no data is available, return an empty List
 	 */
-	Map<String, Integer> getSymptoms(List<String> result);
+	TreeMap<String, Integer> getSymptoms(List<String> result);
 }
