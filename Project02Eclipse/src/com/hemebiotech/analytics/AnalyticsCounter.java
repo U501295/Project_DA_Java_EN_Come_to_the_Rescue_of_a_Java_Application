@@ -1,7 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
-import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * @author JULIEN BARONI, intern
@@ -48,8 +48,10 @@ public class AnalyticsCounter {
 		List<String> symptomList = symptomFile.inputFetch();
 		System.out.println(symptomList);
 		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile();
-		Map<String, Integer> symptomOutput = reader.getSymptoms(symptomList);
+		TreeMap<String, Integer> symptomOutput = reader.getSymptoms(symptomList);
 		System.out.println(symptomOutput);
+		OutputCreator output = new OutputCreator();
+		output.setOutput(symptomOutput);
 
 	}
 }

@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class InputGetter implements IFetch {
@@ -34,7 +33,7 @@ public class InputGetter implements IFetch {
 				e.printStackTrace();
 			}
 		}
-		Collections.sort(result);
+
 		return result;
 	}
 
