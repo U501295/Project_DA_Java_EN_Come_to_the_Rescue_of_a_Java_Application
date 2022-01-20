@@ -1,11 +1,11 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
+import java.util.Map;
 
 /**
- * @author Caroline Hédot, Technical Director at Heme Biotech/ Code cleaned by
- *         JULIEN BARONI, intern
- * @version 1.0
+ * @author JULIEN BARONI, intern
+ * @version 2.0
  * 
  * 
  * @Description_of_the_Interface Anything that will read symptom data from a
@@ -24,5 +24,5 @@ public interface ISymptomReader {
 	 * @return A raw listing of all Symptoms obtained from a data source, duplicates
 	 *         are possible/probable.If no data is available, return an empty List
 	 */
-	List<String> getSymptoms();
+	Map<String, Integer> getSymptoms(List<String> result);
 }

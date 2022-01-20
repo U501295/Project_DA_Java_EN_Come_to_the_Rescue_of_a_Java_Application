@@ -1,51 +1,39 @@
 package com.hemebiotech.analytics;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 
- * @author Caroline Hédot, Technical Director at Heme Biotech/ Code cleaned by
- *         JULIEN BARONI, intern
- * @version 1.0
+ * @author JULIEN BARONI, intern
+ * @version 2.0
  * 
  * @Description_of_the_Class Simple brute force implementation
  *
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
-	private String symptomsDocumentPath;
-
-	public ReadSymptomDataFromFile(String symptomsDocumentPath) {
-		this.symptomsDocumentPath = symptomsDocumentPath;
-	}
-
 	/**
 	 * Used to list symptoms
 	 */
 	@Override
-	public List<String> getSymptoms() {
-		ArrayList<String> result = new ArrayList<String>();
+	public Map<String, Integer> getSymptoms(List<String> symptoms) {
+		Map<String, Integer> symptomCount = new HashMap<String, Integer>();
+		final int startIterator = 1;
 
-		if (symptomsDocumentPath != null) {
-			try {
-				BufferedReader inputReader = new BufferedReader(new FileReader(symptomsDocumentPath));
-				String readedLine = inputReader.readLine();
-
-				while (readedLine != null) {
-					result.add(readedLine);
-					readedLine = inputReader.readLine();
-				}
-				inputReader.close();
-			} catch (IOException e) {
-				e.printStackTrace();
+		for (String symptom : symptoms) {
+			// rajouter les conditions si input respecte pas la casse
+			final String constanteSymptom = symptom;
+			if (symptomCount.containsKey(constanteSymptom)) {
+				symptomCount.put(constanteSymptom, symptomCount.get(constanteSymptom) + 1);
+			} else {
+				symptomCount.put(constanteSymptom, startIterator);
 			}
+
 		}
 
-		return result;
+		return symptomCount;
 	}
 
 }
