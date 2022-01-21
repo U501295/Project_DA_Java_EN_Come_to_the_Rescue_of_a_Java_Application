@@ -1,8 +1,5 @@
 package com.hemebiotech.analytics;
 
-import java.util.List;
-import java.util.TreeMap;
-
 /**
  * @author JULIEN BARONI, intern
  * @version 2.0
@@ -43,15 +40,19 @@ public class AnalyticsCounter {
 		 * writer.write("dialated pupils: " + pupilCount + "\n"); writer.close();
 		 */
 
-		InputGetter symptomFile = new InputGetter(
+		/*
+		 * InputGetter symptomFile = new InputGetter(
+		 * "C:\\Users\\S647648\\Onedrive - AXA\\Bureau\\TECH\\methodo_dev\\Projet_2\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\symptoms.txt"
+		 * ); List<String> symptomList = symptomFile.inputFetch();
+		 * System.out.println(symptomList); ReadSymptomDataFromFile reader = new
+		 * ReadSymptomDataFromFile(); TreeMap<String, Integer> symptomOutput =
+		 * reader.getSymptoms(symptomList); System.out.println(symptomOutput);
+		 * OutputCreator output = new OutputCreator(); output.setOutput(symptomOutput);
+		 */
+
+		RefactoredAnalyticsCounter action = new RefactoredAnalyticsCounter(
 				"C:\\Users\\S647648\\Onedrive - AXA\\Bureau\\TECH\\methodo_dev\\Projet_2\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\symptoms.txt");
-		List<String> symptomList = symptomFile.inputFetch();
-		System.out.println(symptomList);
-		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile();
-		TreeMap<String, Integer> symptomOutput = reader.getSymptoms(symptomList);
-		System.out.println(symptomOutput);
-		OutputCreator output = new OutputCreator();
-		output.setOutput(symptomOutput);
+		action.setOutput(action.getSymptoms(action.inputFetch()));
 
 	}
 }
