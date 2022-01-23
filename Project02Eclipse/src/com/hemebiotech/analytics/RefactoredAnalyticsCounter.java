@@ -11,8 +11,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
 
+/**
+ * {@inheritDoc}
+ */
 public class RefactoredAnalyticsCounter implements IFunctions {
-
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public List<String> getSymptomsFile(String inputPath)
 			throws IOException, FileNotFoundException, NullPointerException {
@@ -37,6 +42,9 @@ public class RefactoredAnalyticsCounter implements IFunctions {
 		return inputContent;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public TreeMap<String, Integer> analyseDataFromSymptomsFile(List<String> inputContent)
 			throws ClassCastException, NullPointerException {
@@ -60,6 +68,9 @@ public class RefactoredAnalyticsCounter implements IFunctions {
 
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void writeSymptomsCount(TreeMap<String, Integer> symptomsInfo)
 			throws IOException, ClassCastException, NullPointerException {
